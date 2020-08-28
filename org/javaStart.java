@@ -11,11 +11,11 @@
 //
 //  Tendo em mãos um compilador java, você pode estudar
 //como criar um jogo basico, mas com um pouco de I.A.
-//(Inteligência Artificial), a qual vai ser o nosso ini-
-//migo.
+//(Inteligência Artificial), a qual vai ser o nosso inimigo.
 
 //Pacote de onde se encontra o arquivo
 //Para manter arrumado os nossos códigos
+*/
 package org;
 
 //Importamos o JFrame, que é onde irá ser criada a nossa
