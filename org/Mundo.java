@@ -1,15 +1,17 @@
-//@Autor:Assis
-//@Date:25/06/2012
-//
-//  Este jogo foi montado em java, com software livre
-//Com um pequeno "tutorial", explicando certas coisas
-//n„o t„o bem detalhados.
-//  Em sÌ, peÁo para que quem for modificar qualquer 
-//parte deste cÛdigo, coloque o seu nome nesta parte,
-//assim como a data e qual foi a modificaÁ„o que fez.
+/**
+@Autor:Assis
+@Date:25/06/2012
 
+  Este jogo foi montado em java, com software livre
+Com um pequeno "tutorial", explicando certas coisas
+n√£o t√£o bem detalhados.
+  Em s√≠, pe√ßo para que quem for modificar qualquer 
+parte deste c√≥digo, coloque o seu nome nesta parte,
+assim como a data e qual foi a modifica√ß√£o que fez.
+*/
+	
 //Pacote de onde se encontra o arquivo
-//Para manter arrumado os nossos cÛdigos
+//Para manter arrumado os nossos c√≥digos
 package org;
 
 
@@ -33,8 +35,8 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 
-//Criamos a classe Mundo que extende, ou seja, recebe as informaÁıes
-//de JPanel, e ainda implementa os "ouvindo de aÁıes" ActionListener
+//Criamos a classe Mundo que extende, ou seja, recebe as informa√ß√µes
+//de JPanel, e ainda implementa os "ouvindo de a√ß√µes" ActionListener
 @SuppressWarnings("serial")
 public class Mundo extends JPanel implements ActionListener {
 
@@ -52,16 +54,16 @@ public class Mundo extends JPanel implements ActionListener {
 	private int pontoUm = 0;
 	private int pontoDois = 0;
 
-	//Chamamos os personagens "os bastıes"
+	//Chamamos os personagens "os bast√µes"
 	//e a bola
 	private Player playerOne;
 	protected ball gameBall;
 	private PlayerTwo playerTwo;
 
-	//MÈtodo publico Mundo È inicializado
+	//M√©todo publico Mundo √© inicializado
 	public Mundo() {
 
-		//Deixa a tela em fÛco e com
+		//Deixa a tela em f√≥co e com
 		//doubleBuffered
 		this.setFocusable(true);
 		this.setDoubleBuffered(true);
@@ -74,38 +76,38 @@ public class Mundo extends JPanel implements ActionListener {
 		//Tosco a qual eu fiz
 		bakcground = new ImageIcon("res/background.gif").getImage();
 		
-		//Pedimos para ser "pintado" na tela tambÈm os dois jogadores
+		//Pedimos para ser "pintado" na tela tamb√©m os dois jogadores
 		//e a bola
 		playerOne = new Player();
 		gameBall = new ball();
 		playerTwo = new PlayerTwo();
 
-		//A cada 10 milesegundos esta tela ir· ser repintada,
-		//Com um evento prÛprio
+		//A cada 10 milesegundos esta tela ir√° ser repintada,
+		//Com um evento pr√≥prio
 		timer = new Timer(15, this);
 		timer.start();		//Inicia o timer
     }
 
 
-	//MÈtodo com valor vazio para pintar na tela que criamos
+	//M√©todo com valor vazio para pintar na tela que criamos
 	public void paint(Graphics g) {
 
 
-		//Pinta o cen·rio com a posiÁ„o inicial no topo da tela
+		//Pinta o cen√°rio com a posi√ß√£o inicial no topo da tela
 		g.drawImage(bakcground, 0, 0, null);
 		//Desenha o primeiro jogador (o da esquerda), com o seu
-		//valor inicial sendo pego pelos seus valores prÈ-determinados
-		//Nos mÈtodos das classe Player
+		//valor inicial sendo pego pelos seus valores pr√©-determinados
+		//Nos m√©todos das classe Player
 		g.drawImage(playerOne.getPlayerImage(), playerOne.getX(),
 				playerOne.getY(), this);
-		//Se entendeu o anterior, n„o merece outra explicaÁ„o
+		//Se entendeu o anterior, n√£o merece outra explica√ß√£o
 		g.drawImage(gameBall.getBallImage(), gameBall.getX(), gameBall.getY(),
 				null);
 		g.drawImage(playerTwo.getPlayerTwoImage(), playerTwo.getX(),
 				playerTwo.getY(), null);
 
 		
-		//Escreveremos na tela as pontuaÁıes com a cor verde
+		//Escreveremos na tela as pontua√ß√µes com a cor verde
 		g.setColor(Color.GREEN);
 		g.drawString("Player 1: " + pontoUm, 23, 23);
 		g.drawString("Computador: " + pontoDois, 600, 23);
@@ -123,7 +125,7 @@ public class Mundo extends JPanel implements ActionListener {
 
 		g.dispose();
 		die();
-	}		//Finaliza o mÈtodo paint
+	}		//Finaliza o m√©todo paint
 
 	
 	public void bateVolta() {
