@@ -1,23 +1,24 @@
+/**
 //@Autor:Assis
 //@Date:25/06/2012
 //
 //  Este jogo foi montado em java, com software livre
 //Com um pequeno "tutorial", explicando certas coisas
-//n„o t„o bem detalhados.
-//  Em sÌ, peÁo para que quem for modificar qualquer 
-//parte deste cÛdigo, coloque o seu nome nesta parte,
-//assim como a data e qual foi a modificaÁ„o que fez.
+//n√£o t√£o bem detalhados.
+//  Em s√≠, pe√ßo para que quem for modificar qualquer 
+//parte deste c√≥digo, coloque o seu nome nesta parte,
+//assim como a data e qual foi a modifica√ß√£o que fez.
 //
-//  Tendo em m„os um compilador java, vocÍ pode estudar
+//  Tendo em m√£os um compilador java, voc√™ pode estudar
 //como criar um jogo basico, mas com um pouco de I.A.
-//(InteligÍncia Artificial), a qual vai ser o nosso ini-
+//(Intelig√™ncia Artificial), a qual vai ser o nosso ini-
 //migo.
 
 //Pacote de onde se encontra o arquivo
-//Para manter arrumado os nossos cÛdigos
+//Para manter arrumado os nossos c√≥digos
 package org;
 
-//Importamos o JFrame, que È onde ir· ser criada a nossa
+//Importamos o JFrame, que √© onde ir√° ser criada a nossa
 //janela do jogo
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,8 +30,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-//O nome da class "class" dever· sempre ser o nome do arquivo
-//porÈm, com a extenÁ„o java (javaStart.java).
+//O nome da class "class" dever√° sempre ser o nome do arquivo
+//por√©m, com a exten√ß√£o java (javaStart.java).
 //Depois extenderemos o JFrame, para ser uma "superclasse" de
 //da nossa "sub-class".
 class javaStart extends JFrame {
@@ -42,40 +43,40 @@ class javaStart extends JFrame {
 	//ser pintado na nossa janela
 	private Mundo mundo;
 
-	// MÈtodo onde ser· inst‚nciada a nossa janela
-	// com seus devidos par‚metros.
+	// M√©todo onde ser√° inst√¢nciada a nossa janela
+	// com seus devidos par√¢metros.
 	public javaStart() {
 
-		// Adiciona um novo elemento, a qual ser· o Mundo.java
+		// Adiciona um novo elemento, a qual ser√° o Mundo.java
 		// Depois de compilado (transformado em byte-codes java)
 		mundo = new Mundo();
 		add(mundo);
 
 
 		//Criaremos aqui a barra onde colocaremos os menus e sub-
-		//menus no mÈtodo privado meuJogo
+		//menus no m√©todo privado meuJogo
 		setJMenuBar(menuJogo());
 
 		setSize(700, 500); // Tamanho da janela em pixels
 		setVisible(true); // Sim, a nossa janela que ser visivel
-		setTitle("Pong"); // TÌtulo da janela, "a parte superior"
+		setTitle("Pong"); // T√≠tulo da janela, "a parte superior"
 		setLocationRelativeTo(null);// Janela no meio da tela
-		setResizable(false); // Ela n„o poder· ser alterado o seu tamanho
-								// Obs.: J· viram uma janela de um jogo de pode
+		setResizable(false); // Ela n√£o poder√° ser alterado o seu tamanho
+								// Obs.: J√° viram uma janela de um jogo de pode
 								// ser
-								// Alterado? Raramente nÈ, pois È, para n„o
+								// Alterado? Raramente n√©, pois √©, para n√£o
 								// acontecer
-								// "bus", vamos evitar que a pessoa n„o veja
-								// alÈm do que pode
+								// "bus", vamos evitar que a pessoa n√£o veja
+								// al√©m do que pode
 
 		// O que acontece quando fechar a janela?
 		// Ela vai ser fechada!
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	// Finaliza o mÈtodo javaStart
+	// Finaliza o m√©todo javaStart
 
 
-	//Criamos o mÈtodo menuJogo, para ser implementado
+	//Criamos o m√©todo menuJogo, para ser implementado
 	//numa barra de menus
 	private JMenuBar menuJogo() {
 		// TODO Auto-generated method stub
@@ -88,15 +89,15 @@ class javaStart extends JFrame {
 		//Criamos um menu com o nome de jogo
 		JMenu menuArquivo = new JMenu("Jogo");
 		//Dizemos ao compilador java que quando uma pessoa
-		//apertar os botıes Alt+A vai acessar este menu
+		//apertar os bot√µes Alt+A vai acessar este menu
 		menuArquivo.setMnemonic('A');
 
 		//Criamos um item de menu com o nome de reinicializar
 		JMenuItem reiniciar = new JMenuItem("Reiniciar");
 		//Dizemos ao compilador java que quando uma pessoa
-		//apertar os botıes Alt+R vai acessar este item de menu
+		//apertar os bot√µes Alt+R vai acessar este item de menu
 		reiniciar.setMnemonic('R');
-		//Quando este item for acionado ele gerar· um evento privado
+		//Quando este item for acionado ele gerar√° um evento privado
 		reiniciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent Event) {
 				//Dizemos para que quando for acionado este evento
@@ -107,13 +108,13 @@ class javaStart extends JFrame {
 
 		//Criamos um outro item de menu com o nome de sair,
 		//Adicionamos um Mnemonic e um evento privado, a qual
-		//SÛ ele sabe o que È
+		//S√≥ ele sabe o que √©
 		JMenuItem sair = new JMenuItem("Sair");
 		sair.setMnemonic('S');
 		sair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent Event) {
 				//Quando for acionado este evento, a janela
-				//Ir· ser fechada
+				//Ir√° ser fechada
 				System.exit(0);
 			}
 		});
@@ -140,26 +141,26 @@ class javaStart extends JFrame {
 			public void actionPerformed(ActionEvent event) {
 				//Neste evento, importaremos o JOptionPane para
 				//Mostrar uma caixa de mensagem com uma pequena
-				//ExplicaÁ„o de como funciona o jogo
+				//Explica√ß√£o de como funciona o jogo
 				JOptionPane.showMessageDialog(null,
 						"Use as setas para Cima e para Baixo\n"
-								+ "para mover o seu jogador, sua funÁ„o\n"
-								+ "È n„o deixar a bola tocar o seu lado",
+								+ "para mover o seu jogador, sua fun√ß√£o\n"
+								+ "√© n√£o deixar a bola tocar o seu lado",
 						"Ajudou pelo o menos?", JOptionPane.NO_OPTION);
 			}
 		});
 
 
-		//Criamos um outro item de menu com o nome de informaÁıes,
-		//O qual, vai fazer a mesma coisa que o item sobre, porÈm
+		//Criamos um outro item de menu com o nome de informa√ß√µes,
+		//O qual, vai fazer a mesma coisa que o item sobre, por√©m
 		//Com uma mensagem diferente
-		JMenuItem informacao = new JMenuItem("InformaÁıes Adicionais?");
+		JMenuItem informacao = new JMenuItem("Informa√ß√µes Adicionais?");
 		informacao.setMnemonic('I');
 		informacao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				JOptionPane.showMessageDialog(null, "Achou Erros?\n"
-						+ "As melhoras ir„o a vir na proxima\n"
-						+ "versıes.\nEsta vers„o È a 0.0.1",
+						+ "As melhoras ir√£o a vir na proxima\n"
+						+ "vers√µes.\nEsta vers√£o √© a 0.0.1",
 						"Por favor, ajude a melhorar o pong",
 						JOptionPane.YES_NO_OPTION);
 			}
@@ -174,7 +175,7 @@ class javaStart extends JFrame {
 		barra.add(ajuda);
 
 		
-		//Retorna o valor da barra, a qual agora contÈm todos
+		//Retorna o valor da barra, a qual agora cont√©m todos
 		//os menus e itens de menus que acamos de 
 		return barra;
 	}
@@ -182,13 +183,13 @@ class javaStart extends JFrame {
 	/**
 	 * @param args
 	 */
-	// MÈtodo principal, onde quando o programa for executado
-	// Ele vai procurar primeiramente este mÈtodo.
+	// M√©todo principal, onde quando o programa for executado
+	// Ele vai procurar primeiramente este m√©todo.
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// Chama o nosso mÈtodo de onde criamos a janela
+		// Chama o nosso m√©todo de onde criamos a janela
 		new javaStart();
 	}
-	// Finaliza o mÈtodo main
+	// Finaliza o m√©todo main
 
 }
