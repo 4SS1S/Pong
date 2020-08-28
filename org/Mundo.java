@@ -8,6 +8,8 @@ não tão bem detalhados.
   Em sí, peço para que quem for modificar qualquer 
 parte deste código, coloque o seu nome nesta parte,
 assim como a data e qual foi a modificação que fez.
+
+(Sim, eu não conhecia GitHub em 2012)
 */
 	
 //Pacote de onde se encontra o arquivo
