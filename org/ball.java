@@ -1,50 +1,52 @@
-//@Autor:Assis
-//@Date:25/06/2012
-//
-//  Este jogo foi montado em java, com software livre
-//Com um pequeno "tutorial", explicando certas coisas
-//n„o t„o bem detalhados.
-//  Em sÌ, peÁo para que quem for modificar qualquer 
-//parte deste cÛdigo, coloque o seu nome nesta parte,
-//assim como a data e qual foi a modificaÁ„o que fez.
+/**
+@Autor:Assis
+@Date:25/06/2012
+
+  Este jogo foi montado em java, com software livre
+Com um pequeno "tutorial", explicando certas coisas
+n√£o t√£o bem detalhados.
+  Em s√≠, pe√ßo para que quem for modificar qualquer 
+parte deste c√≥digo, coloque o seu nome nesta parte,
+assim como a data e qual foi a modifica√ß√£o que fez.
+*/
 
 //Pacote de onde se encontra o arquivo
-//Para manter arrumado os nossos cÛdigos
+//Para manter arrumado os nossos c√≥digos
 package org;
 
-import java.awt.Image; //Importamos este mÈtodo para usar imagens
-import java.awt.Rectangle; //Importamos este mÈtodo para usar retangulos
+import java.awt.Image; //Importamos este m√©todo para usar imagens
+import java.awt.Rectangle; //Importamos este m√©todo para usar retangulos
 
-//Importamos o mÈtodo para criar um icone de imagem
+//Importamos o m√©todo para criar um icone de imagem
 import javax.swing.ImageIcon;
 
 //Criamos uma classe public chamada ball, onde nela teremos todos os
-//par‚metros da bola que ser· usada no jogo
+//par√¢metros da bola que ser√° usada no jogo
 public class ball {
 
 	int x, y; // Variaveis inteiros de pixel x e y
 
 	// variaveis de valor duplo de um inteiro para
-	// a sua velocidade de locomoÁ„o
+	// a sua velocidade de locomo√ß√£o
 	public double dx = -5, dy = -5;
 
-	// Imagem privada, onde nÌnguem (nenhuma outra classe)
+	// Imagem privada, onde n√≠nguem (nenhuma outra classe)
 	// possa alterar ou ver a nossa imagem, vamos fazer isto
-	// por um pouco de "seguranÁa"
+	// por um pouco de "seguran√ßa"
 	private Image ballImage;
 
-	// T·, estes dois eu n„o preciso explicar correto?
+	// T√°, estes dois eu n√£o preciso explicar correto?
 	private int altura;
 	private int largura;
 
-	// MÈtodo publico de onde criaremos a bola do jogo
+	// M√©todo publico de onde criaremos a bola do jogo
 	public ball() {
 
-		// Chama o mÈtodo public de resetBall, para
-		// Colocar a bola em seu lugar prÈ-definido
+		// Chama o m√©todo public de resetBall, para
+		// Colocar a bola em seu lugar pr√©-definido
 		resetBall();
 
-		// Usaremos este pequeno cÛdigo que segue abaixo para
+		// Usaremos este pequeno c√≥digo que segue abaixo para
 		// pegar a imagem, cria-la como icone e transforma-la
 		// em uma imagem de verdade
 		ballImage = new ImageIcon("res/bola.gif").getImage();
@@ -54,52 +56,52 @@ public class ball {
 		largura = ballImage.getWidth(null);
 	}
 
-	// Finalizamos o mÈtodo ball
+	// Finalizamos o m√©todo ball
 
-	// Criamos um mÈtodo para que os membros de outras
+	// Criamos um m√©todo para que os membros de outras
 	// classes possam ver a variavel x
 	public int getX() {
 		return x;
 	}
 
-	// Criamos um mÈtodo para que os membros de outras
+	// Criamos um m√©todo para que os membros de outras
 	// classes possam ver a variavel dx
 	public double getDx() {
 		return dx;
 	}
 
-	// Criamos um mÈtodo para que os membros de outras
+	// Criamos um m√©todo para que os membros de outras
 	// classes possam modificar a variavel x
 	public void setDx(double dx) {
 		this.dx = dx;
 	}
 
-	// Criamos um mÈtodo para que os membros de outras
+	// Criamos um m√©todo para que os membros de outras
 	// classes possam ver a variavel dy
 	public double getDy() {
 		return dy;
 	}
 
-	// Criamos um mÈtodo para que os membros de outras
+	// Criamos um m√©todo para que os membros de outras
 	// classes possam alterar a variavel dy
 	public void setDy(double dy) {
 		this.dy = dy;
 	}
 
-	// Criamos um mÈtodo para que os membros de outras
+	// Criamos um m√©todo para que os membros de outras
 	// classes possam ver a variavel y
 	public int getY() {
 		return y;
 	}
 
-	// Criamos um mÈtodo para que os membros de outras
+	// Criamos um m√©todo para que os membros de outras
 	// classes possam ver a imagem da bola
 	public Image getBallImage() {
 		return ballImage;
 	}
 
-	// MÈtodo onde a bola se mover· livremente,
-	// PorÈm, n„o podemos deixa-la sair da tela,
+	// M√©todo onde a bola se mover√° livremente,
+	// Por√©m, n√£o podemos deixa-la sair da tela,
 	// Por isto colocamos estes testes (if)
 	public void move() {
 
@@ -124,19 +126,19 @@ public class ball {
 
 	}
 
-	// Criamos um mÈtodo para que os membros de outras
+	// Criamos um m√©todo para que os membros de outras
 	// classes possam alterar a variavel x
 	public void setX(int x) {
 		this.x = x;
 	}
 
-	// Criamos um mÈtodo para que os membros de outras
+	// Criamos um m√©todo para que os membros de outras
 	// classes possam alterar a variavel y
 	public void setY(int y) {
 		this.y = y;
 	}
 
-	// PrÈ-padroniza a bola na tela, em uma posiÁ„o abaixo
+	// Pr√©-padroniza a bola na tela, em uma posi√ß√£o abaixo
 	// indicado
 	public void resetBall() {
 		this.x = 350;
@@ -144,7 +146,7 @@ public class ball {
 	}
 
 	// Cria um retangulo com as variaveis x e y da bola,
-	// AlÈm de sua altura e sua largura
+	// Al√©m de sua altura e sua largura
 	public Rectangle getBound() {
 		return new Rectangle(x, y, largura, altura);
 	}
